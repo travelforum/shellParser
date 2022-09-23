@@ -1,10 +1,8 @@
 %{
 /*
- * Simple example lex input file
+ * lex input file
  *
- * Shawn Ostermann -- Sept 11, 2022
- *
- * Headstart version
+ * Nick Schuler -- Sept 23, 2022
  */
 
 #include <string.h>
@@ -37,7 +35,7 @@ extern int debug;
    you'll need to update it to support other characters too... */
 %}
 [\!\@\#\$\%\^\*\(\)\+\=\~\[\]\{\}\;\:\,\?\-\&'.0-9a-zA-Z_/]+ {
-    /* a "WORD" - will need to be modified */
+    /* a "WORD" */
     if (debug)
         printf("scanner saw WORD '%s'\n", yytext);
     yylval.string = strdup(yytext);  /* make a copy of the string */
@@ -59,7 +57,8 @@ extern int debug;
 >{2} {return(OUTFILE_APPEND);}
 2>{1} {return(ERRFILE);}
 2>{2} {return(ERRFILE_APPEND);}
-[\"][^\"\n]*[\"] {yytext = yytext + 1;
+
+[\"][^\"\n]*[\"] {yytext = yytext + 1; /*return "string" as WORD with no " */
                  yytext[strlen(yytext) - 1] = '\0';
                  yylval.string = strdup(yytext);
                  return(WORD);
