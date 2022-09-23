@@ -1,5 +1,5 @@
 /*
- * Ostermann's shell header file
+ * shell header file
  */
 
 
