@@ -1,7 +1,7 @@
 /*
- * Headstart for Ostermann's shell project
+ * Main for Shell Project
  *
- * Shawn Ostermann -- Sept 11, 2022
+ * Nick Schuler - 9/23/2022
  */
  
 #include <string.h>
@@ -52,6 +52,7 @@ doline(
 
         while(pcmd->lines == temp){
             cout << "Command name: '" << pcmd->argv[0] <<"'\n";
+		
             for(int i = 0; i < pcmd->argc; i++){ //ARGS
                 cout << "    argv[" << i << "]: '" << pcmd->argv[i] << "'\n";
             }
@@ -105,6 +106,7 @@ doline(
             else{
                 cout << "  stderr: '<undirected>'\n";
             }
+		
             if(pcmd->next == NULL){ //exit condition
                 break;
             }
