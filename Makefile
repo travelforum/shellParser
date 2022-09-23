@@ -1,7 +1,3 @@
-#
-# Sample lex/yacc Makefile
-# Shawn Ostermann - Mon Sep 24, 2001
-#
 CFLAGS = -Wall -Werror -O2
 CC = gcc
 CXX = g++
@@ -10,14 +6,6 @@ PROGRAM = bash
 CFILES = 
 CCFILES = bash.cc
 HFILE = bash.h
-
-
-##################################################
-#
-# You shouldn't need to change anything else
-#
-##################################################
-
 
 # compute the OFILES
 OFILES = ${CFILES:.c=.o} ${CCFILES:.cc=.o}
