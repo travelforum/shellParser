@@ -54,7 +54,9 @@ test: bash
 	-./test.6
 	-./test.7
 	-./test.8
-	
+
+format:
+	clang-format -i -style=file *.cc *.h
 
 clean:
 	/bin/rm -f *.o lex.yy.c parser.tab.c ${PROGRAM} parser.tab.h parser.output *.tab.c *.tab.h core test.*.myoutput test.*.correct test.*.input
