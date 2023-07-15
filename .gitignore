@@ -31,4 +31,12 @@
 *.out
 *.app
 
+# Debug files
 .vscode
+
+# Build files
+bash
+lex.yy.c
+parser.output
+parser.tab.c
+parser.tab.h
